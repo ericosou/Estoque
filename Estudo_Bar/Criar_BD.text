@@ -1,0 +1,32 @@
+-- Criação do banco de dados
+CREATE DATABASE IF NOT EXISTS estudo_bar;
+
+-- Seleciona o banco de dados a ser usado
+USE estudo_bar;
+
+-- Criação da tabela de usuários
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario VARCHAR(50) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    tipo ENUM('admin', 'user') NOT NULL
+);
+
+-- Criação da tabela de bebidas
+CREATE TABLE IF NOT EXISTS bebidas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    quantidade INT NOT NULL,
+    data_validade DATE NOT NULL
+);
+
+-- Inserção de dados de exemplo na tabela de usuários (opcional)
+INSERT INTO usuarios (usuario, senha, nome, tipo) VALUES
+('admin', MD5('adminpass'), 'Administrador', 'admin'),
+('user1', MD5('userpass1'), 'Usuário 1', 'user');
+
+-- Inserção de dados de exemplo na tabela de bebidas (opcional)
+INSERT INTO bebidas (nome, quantidade, data_validade) VALUES
+('Cerveja', 100, '2024-12-31'),
+('Refrigerante', 50, '2024-06-30');
