@@ -41,3 +41,5 @@ Clique no botão "Sair" para encerrar a sessão.
 
 O comando de criar o BD estar no arquivo de texto 
 Criar_BD.
+
+Recomendo criar um usuario direto no banco de usuários, pois não quis criar uma page para cadatro de usuario, isso pode ser feito no comandos do sql ao criar o banco de dados. 
